@@ -48,5 +48,5 @@ body {
     width: 100px;
     border: 1px dashed #ff9200;
     padding: 10px;
-
+    cursor: pointer;
 }
