@@ -24,8 +24,29 @@ body {
     border: 1px solid #00feff;
 }
 
+/* User box style section */
 .user-choices-container {
     width: 70%;
     height: 20%;
     border: 1px solid #cd00ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* container contain the img of rock/paper/scissor */
+.user-choices-outer {
+    border: 1px solid #cd00ff;
+    width: 70%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* class for user choice selection - adjust the appearance of the choices */
+.user-choice {
+    width: 100px;
+    border: 1px dashed #ff9200;
+    padding: 10px;
+
 }
