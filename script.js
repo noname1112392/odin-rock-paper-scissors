@@ -1,8 +1,8 @@
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
-
-
+let playerChoice;
+const valueInput = prompt('input value');
 
 function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * 3);
@@ -61,14 +61,19 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-rock.addEventListener('click', function () {
-    console.log(playRound('rock', getComputerChoice()));
-});
+const playerArray = new Array();
+const computerArray = new Array();
 
-paper.addEventListener('click', function () {
-    console.log(playRound('paper', getComputerChoice()));
-});
+rock.addEventListener('click', function() {
+    playerChoice = 'rock';
+    playerArray.push(playerChoice);
+    computerArray.push(getComputerChoice());
+})
 
-scissors.addEventListener('click', function () {
-    console.log(playRound('scissors', getComputerChoice()));
-});
+function game() {
+    for (i = 0; i < valueInput; i++) {
+        console.log(playRound(playerArray[i], computerArray[i]));
+        } 
+}
+
+//create 2 arrays one for user click and the other for computer selection.
