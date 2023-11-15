@@ -1,3 +1,7 @@
+
+
+
+
 function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * 3);
 
@@ -16,40 +20,39 @@ function playRound(playerSelection, computerSelection) {
         case 'rock':
             switch (computerSelection) {
                 case 'rock':
-                    return "It's a tie!";
+                    return "Computer throws rock, It's a tie!";
                     break;
                 case 'paper':
-                    return "Computer wins!";
+                    return "Computer wins! it shows paper";
                     break;
                 case 'scissors':
-                    return "Player wins!";
+                    return "Player wins! Computer shows scissors";
                     break;
             }
             break;
         case "paper":
             switch (computerSelection) {
                 case "rock":
-                    return "Player wins!";
+                    return "Player wins! Computer shows rock";
                     break;
                 case "paper":
-                    return "It's a tie!";
+                    return "Computer shows paper, It's a tie!";
                     break;
                 case "scissors":
-                    return "Computer wins!";
+                    return "Computer wins! it shows scissors";
                     break;
             }
             break;
-
         case "scissors":
             switch (computerSelection) {
                 case "rock":
-                    return "Computer wins!";
+                    return "Computer wins! it throws rock";
                     break;
                 case "paper":
-                    return "Player wins!";
+                    return "Player wins! Computer shows paper";
                     break;
                 case "scissors":
-                    return "It's a tie!";
+                    return "Computer shows scissors, It's a tie!";
                     break;
             }
             break;
