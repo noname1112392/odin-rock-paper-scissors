@@ -4,7 +4,7 @@ const scissors = document.getElementById('scissors');
 let playerChoice;
 let playerArray = [];
 let computerArray = [];
-//const inputValue = prompt("Please enter in the amount of time you want to play against the computer!")
+const inputValue = prompt("Please enter in the amount of time you want to play against the computer!")
 
 function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * 3);
@@ -64,13 +64,29 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function displayResults() {
-    for (let i = 0; i < playerArray.length; i++) {
-        const result = playRound(playerArray[i], computerArray[i]);
+    let i = 0;
+    while (i < inputValue) {
+        let result = playRound(playerArray[i], computerArray[i]);
         console.log(result);
     }
+
 }
 
-rock.addEventListener("click", function() {
+paper.addEventListener('click', function () {
+    playerChoice = 'paper';
+    playerArray.push(playerChoice);
+    computerArray.push(getComputerChoice());
+    displayResults();
+})
+
+scissors.addEventListener('click', function () {
+    playerChoice = 'scissors';
+    playerArray.push(playerChoice);
+    computerArray.push(getComputerChoice());
+    displayResults();
+})
+
+rock.addEventListener('click', function () {
     playerChoice = 'rock';
     playerArray.push(playerChoice);
     computerArray.push(getComputerChoice());
