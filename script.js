@@ -1,9 +1,10 @@
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
-const inputValue = document.getElementById('inputValue');
-const submitBtn = document.getElementById('submit-btn');
 let playerChoice;
+let playerArray = [];
+let computerArray = [];
+//const inputValue = prompt("Please enter in the amount of time you want to play against the computer!")
 
 function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * 3);
@@ -62,17 +63,16 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const playerArray = new Array();
-const computerArray = new Array();
+function displayResults() {
+    for (let i = 0; i < playerArray.length; i++) {
+        const result = playRound(playerArray[i], computerArray[i]);
+        console.log(result);
+    }
+}
 
-/*rock.addEventListener('click', function() {
+rock.addEventListener("click", function() {
     playerChoice = 'rock';
     playerArray.push(playerChoice);
     computerArray.push(getComputerChoice());
-})*/
-
-function game() {
-    for (i = 0; i < valueInput; i++) {
-        console.log(playRound(playerArray[i], computerArray[i]));
-        } 
-}
+    displayResults();
+})
