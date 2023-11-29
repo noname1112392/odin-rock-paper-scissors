@@ -1,6 +1,6 @@
-const rock = document.getElementById('rock');
-const paper = document.getElementById('paper');
-const scissors = document.getElementById('scissors');
+const rock_btn = document.getElementById('rock');
+const paper_btn = document.getElementById('paper');
+const scissors_btn = document.getElementById('scissors');
 //let playerChoice;
 //let playerArray = [];
 //let computerArray = [];
@@ -63,6 +63,20 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+rock_btn.addEventListener('click', () => {
+    let result = playRound('rock', getComputerChoice());
+    console.log(result);
+});
+
+paper_btn.addEventListener('click', () => {
+    let result = playRound('paper', getComputerChoice());
+    console.log(result);
+});
+
+scissors_btn.addEventListener('click', () => {
+    let result = playRound('scissors', getComputerChoice());
+    console.log(result);
+});
 
 /*function game() {
     for (let i = 0; i < 5; i++) {
