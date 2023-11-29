@@ -64,12 +64,12 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-function game() {
+/*function game() {
     for (let i = 0; i < 5; i++) {
         const playerChoice = prompt ('input rock/paper/scissors');
         console.log(playRound(playerChoice, getComputerChoice()));
     }
-}
+}*/
 /*function displayResults() {
     let i = 0;
     while (i < inputValue) {
