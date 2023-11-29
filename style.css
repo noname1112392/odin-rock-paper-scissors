@@ -16,12 +16,18 @@ body {
     width: 70%;
     height: 20%;
     border: 1px solid #32ff00;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.display-cmt-container {
+#display-cmt-container {
     width: 80%;
     height: 40%;
     border: 1px solid #00feff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* User box style section */
