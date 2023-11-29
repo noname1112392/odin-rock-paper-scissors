@@ -76,3 +76,5 @@ function game() {
 }
 
 In PART 1, there are three functions to get the game going using the console of the web. We will use the game() to start the game. In the game(), it will loop 5 times and each time it will ask the player's input. Then it will run by using the playRound().
+
+PART 2 --
