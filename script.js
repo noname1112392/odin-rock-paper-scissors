@@ -1,6 +1,9 @@
 const rock_btn = document.getElementById('rock');
 const paper_btn = document.getElementById('paper');
 const scissors_btn = document.getElementById('scissors');
+let text_display = document.getElementById('text-display');
+let playerScore = 0;
+let computerScore = 0;
 //let playerChoice;
 //let playerArray = [];
 //let computerArray = [];
@@ -25,13 +28,12 @@ function playRound(playerSelection, computerSelection) {
             switch (computerSelection) {
                 case 'rock':
                     return "Computer throws rock, It's a tie!";
-                    break;
                 case 'paper':
+                    computerScore++;
                     return "Computer wins! it shows paper";
-                    break;
                 case 'scissors':
+                    playerScore++;
                     return "Player wins! Computer shows scissors";
-                    break;
             }
             break;
         case "paper":
@@ -63,19 +65,22 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+console.log(computerScore);
+console.log(playerScore);
+
 rock_btn.addEventListener('click', () => {
     let result = playRound('rock', getComputerChoice());
-    console.log(result);
+    text_display.textContent = result;
 });
 
 paper_btn.addEventListener('click', () => {
     let result = playRound('paper', getComputerChoice());
-    console.log(result);
+    text_display.textContent = result;
 });
 
 scissors_btn.addEventListener('click', () => {
     let result = playRound('scissors', getComputerChoice());
-    console.log(result);
+    text_display.textContent = result;
 });
 
 /*function game() {
