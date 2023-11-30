@@ -6,7 +6,8 @@ let player_score_display = document.getElementById('player-score-display');
 let computer_score_display = document.getElementById('computer-score-display');
 let playerScore = 0;
 let computerScore = 0;
-let totalScore = 0;
+let currentRound = 0;
+let totalRounds = 5;
 
 function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * 3);
@@ -62,63 +63,49 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-totalScore = playerScore + computerScore;
 
-while(totalScore <= 5) {
-    rock_btn.addEventListener('click', () => {
-        let result = playRound('rock', getComputerChoice());
-        text_display.textContent = result;
-        player_score_display.textContent = playerScore;
-        computer_score_display.textContent = computerScore;
-    });
-    
-    paper_btn.addEventListener('click', () => {
-        let result = playRound('paper', getComputerChoice());
-        text_display.textContent = result;
-        player_score_display.textContent = playerScore;
-        computer_score_display.textContent = computerScore;
-    });
-    
-    scissors_btn.addEventListener('click', () => {
-        let result = playRound('scissors', getComputerChoice());
-        text_display.textContent = result;
-        player_score_display.textContent = playerScore;
-        computer_score_display.textContent = computerScore;
-    });
+function endGame() {
+    if (currentRound === totalRounds) {
+        // Display the final result
+        if (playerScore > computerScore) {
+            text_display.textContent = "You win the game!";
+        } else if (playerScore < computerScore) {
+            text_display.textContent = "Computer wins the game!";
+        } else {
+            text_display.textContent = "It's a tie!";
+        }
+
+        // Disable the buttons to prevent further clicks
+        rock_btn.disabled = true;
+        paper_btn.disabled = true;
+        scissors_btn.disabled = true;      
+    }
 }
 
-/*function game() {
-    for (let i = 0; i < 5; i++) {
-        const playerChoice = prompt ('input rock/paper/scissors');
-        console.log(playRound(playerChoice, getComputerChoice()));
-    }
-}*/
-/*function displayResults() {
-    let i = 0;
-    while (i < inputValue) {
-        let result = playRound(playerArray[i], computerArray[i]);
-        console.log(result);
-    }
 
-}
+rock_btn.addEventListener('click', () => {
+    let result = playRound('rock', getComputerChoice());
+    text_display.textContent = result;
+    player_score_display.textContent = playerScore;
+    computer_score_display.textContent = computerScore;
+    endGame();
+    currentRound++;
+});
 
-paper.addEventListener('click', function () {
-    playerChoice = 'paper';
-    playerArray.push(playerChoice);
-    computerArray.push(getComputerChoice());
-    displayResults();
-})
+paper_btn.addEventListener('click', () => {
+    let result = playRound('paper', getComputerChoice());
+    text_display.textContent = result;
+    player_score_display.textContent = playerScore;
+    computer_score_display.textContent = computerScore;
+    endGame();
+    currentRound++;
+});
 
-scissors.addEventListener('click', function () {
-    playerChoice = 'scissors';
-    playerArray.push(playerChoice);
-    computerArray.push(getComputerChoice());
-    displayResults();
-})
-
-rock.addEventListener('click', function () {
-    playerChoice = 'rock';
-    playerArray.push(playerChoice);
-    computerArray.push(getComputerChoice());
-    displayResults();
-})*/
+scissors_btn.addEventListener('click', () => {
+    let result = playRound('scissors', getComputerChoice());
+    text_display.textContent = result;
+    player_score_display.textContent = playerScore;
+    computer_score_display.textContent = computerScore;
+    endGame();
+    currentRound++;
+});
