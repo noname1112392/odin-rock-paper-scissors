@@ -15,7 +15,8 @@ body {
 .score-board-container {
     width: 70%;
     height: 20%;
-    border: 1px solid #32ff00;
+    border: 1px solid #d7d8d8;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -24,7 +25,7 @@ body {
 #display-cmt-container {
     width: 80%;
     height: 40%;
-    border: 1px solid #00feff;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,7 +35,7 @@ body {
 .user-choices-container {
     width: 70%;
     height: 20%;
-    border: 1px solid #cd00ff;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +43,6 @@ body {
 
 /* container contain the img of rock/paper/scissor */
 .user-choices-outer {
-    border: 1px solid #cd00ff;
     width: 70%;
     height: 50%;
     display: flex;
@@ -52,7 +52,6 @@ body {
 /* class for user choice selection - adjust the appearance of the choices */
 .user-choice {
     width: 100px;
-    border: 1px dashed #ff9200;
     padding: 10px;
     cursor: pointer;
 }
