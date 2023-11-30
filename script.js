@@ -2,12 +2,11 @@ const rock_btn = document.getElementById('rock');
 const paper_btn = document.getElementById('paper');
 const scissors_btn = document.getElementById('scissors');
 let text_display = document.getElementById('text-display');
+let player_score_display = document.getElementById('player-score-display');
+let computer_score_display = document.getElementById('computer-score-display');
 let playerScore = 0;
 let computerScore = 0;
-//let playerChoice;
-//let playerArray = [];
-//let computerArray = [];
-//const inputValue = prompt("Please enter in the amount of time you want to play against the computer!")
+let totalScore = 0;
 
 function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * 3);
@@ -39,49 +38,54 @@ function playRound(playerSelection, computerSelection) {
         case "paper":
             switch (computerSelection) {
                 case "rock":
+                    playerScore++;
                     return "Player wins! Computer shows rock";
-                    break;
                 case "paper":
                     return "Computer shows paper, It's a tie!";
-                    break;
                 case "scissors":
+                    computerScore++;
                     return "Computer wins! it shows scissors";
-                    break;
             }
             break;
         case "scissors":
             switch (computerSelection) {
                 case "rock":
+                    computerScore++;
                     return "Computer wins! it throws rock";
-                    break;
                 case "paper":
+                    playerScore++;
                     return "Player wins! Computer shows paper";
-                    break;
                 case "scissors":
                     return "Computer shows scissors, It's a tie!";
-                    break;
             }
             break;
     }
 }
 
-console.log(computerScore);
-console.log(playerScore);
+totalScore = playerScore + computerScore;
 
-rock_btn.addEventListener('click', () => {
-    let result = playRound('rock', getComputerChoice());
-    text_display.textContent = result;
-});
-
-paper_btn.addEventListener('click', () => {
-    let result = playRound('paper', getComputerChoice());
-    text_display.textContent = result;
-});
-
-scissors_btn.addEventListener('click', () => {
-    let result = playRound('scissors', getComputerChoice());
-    text_display.textContent = result;
-});
+while(totalScore <= 5) {
+    rock_btn.addEventListener('click', () => {
+        let result = playRound('rock', getComputerChoice());
+        text_display.textContent = result;
+        player_score_display.textContent = playerScore;
+        computer_score_display.textContent = computerScore;
+    });
+    
+    paper_btn.addEventListener('click', () => {
+        let result = playRound('paper', getComputerChoice());
+        text_display.textContent = result;
+        player_score_display.textContent = playerScore;
+        computer_score_display.textContent = computerScore;
+    });
+    
+    scissors_btn.addEventListener('click', () => {
+        let result = playRound('scissors', getComputerChoice());
+        text_display.textContent = result;
+        player_score_display.textContent = playerScore;
+        computer_score_display.textContent = computerScore;
+    });
+}
 
 /*function game() {
     for (let i = 0; i < 5; i++) {
